@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <h3 class="text-light">Client List</h3>
+  <div class="card mt-5 p-3">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of users; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.Name.S }}</td>
+            <td>{{ item.Email.S }}</td>
+            <td>{{ item.Address.S }}</td>
+            <td>{{ item.Tel.S }}</td>
+            <td>
+              <button (click)="delete(item.userId.S)" class="btn text-danger">
+                <span class="material-symbols-outlined">
+                  delete
+                </span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

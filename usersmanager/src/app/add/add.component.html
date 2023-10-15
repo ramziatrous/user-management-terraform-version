@@ -1,0 +1,30 @@
+<div class="container my-5">
+
+  <h3 class="text-light"> Add New Client </h3>
+
+  <div class="card mt-5 p-5">
+
+      <div class="row">
+
+          <div class="col-lg-6 text-center">
+              <img src="assets/address.gif" class="w-100" alt="">
+          </div>
+
+          <div class="col-lg-6 p-2">
+
+              <input [(ngModel)]="user.name"    name="name" type="text" placeholder="Name"  class="form-control m-2" >
+              <input [(ngModel)]="user.email"   name="email" type="text" placeholder="Email"  class="form-control m-2"  >
+              <input [(ngModel)]="user.address" name="address" type="email" placeholder="Address"  class="form-control m-2">
+              <input [(ngModel)]="user.tel"     name="tel" type="text" placeholder="Phone Number"  class="form-control m-2">
+
+              <button   class="btn btn-outline-dark m-2 form-control" (click)="add()"> Add Client </button>
+
+          </div>
+
+      </div>
+
+
+  </div>
+
+
+</div>

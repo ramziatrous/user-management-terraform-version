@@ -1,0 +1,36 @@
+<div class="container">
+
+  <h1 class="text-center glow  mt-4">Client Management</h1>
+
+<input [(ngModel)]="name" name="name" type="text" class="Search" placeholder="Client Name">
+<button class="Search mt-4" (click)="search(name)">Search</button>
+
+
+</div>
+<div class="card mt-5 p-3">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of users; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.Name.S }}</td>
+            <td>{{ item.Email.S }}</td>
+            <td>{{ item.Address.S }}</td>
+            <td>{{ item.Tel.S }}</td>
+            <td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
