@@ -4,7 +4,7 @@ provider "aws" {
 
 }
 locals {
-  account_number = DEINE AWS ACCOUNT NUMBER
+  account_number = 992342464544
 }
 
 
@@ -24,23 +24,25 @@ resource "aws_s3_bucket" "website" {
 }
 
 
-# resource "aws_s3_bucket_policy" "website" {
-#   bucket = aws_s3_bucket.website.id
+resource "aws_s3_bucket_policy" "website" {
+  bucket = aws_s3_bucket.website.id
 
-#   policy = jsonencode({
-#   "Version": "2012-10-17",
-#   "Statement": [
-#     {
-#       "Effect": "Allow",
-#       "Action": "s3:GetObject",
-#       "Resource": "arn:aws:s3:::website-v001/*",
-#       "Principal": "*"
-#     }
-#   ]
-# }
+  policy = jsonencode({
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::website-v001/*",
+      "Principal": "*"
+      }
+    
+  ]
+}
 
-# )
-# }
+)
+depends_on = [ aws_s3_bucket.website, aws_s3_bucket_public_access_block.website]
+}
 
 resource "aws_s3_bucket_public_access_block" "website" {
   bucket = aws_s3_bucket.website.id
