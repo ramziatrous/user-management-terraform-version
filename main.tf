@@ -4,7 +4,7 @@ provider "aws" {
 
 }
 locals {
-  account_number = 992342464544
+  account_number = account_number
 }
 
 
